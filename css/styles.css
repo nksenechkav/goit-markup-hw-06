@@ -57,7 +57,12 @@ address {
     background-color: #FFF; 
     border-bottom: 1px solid #E7E9FC;
     box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px #2e2f4229, 0px 2px 1px 0px rgba(46, 47, 66, 0.08);
-    margin-bottom: 1px;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  padding-top: 16px;
+  padding-bottom: 16px;
 }
 
 .header-navigation {
@@ -68,15 +73,15 @@ line-height: 1.5;
 letter-spacing: 0.02rem;
 display: flex;
 flex-grow: 1;
-margin-right: auto;
 align-items: center; 
 }
-.header-container {
-    display: flex;
-    align-items: center;
+
+.header-address-list {
+  display: none;
+  }
+  .header-menu-list {
+    display: none;
 }
-
-
 .header-logo {
 color: #4D5AE5;
 font-size: 18px;
@@ -85,70 +90,19 @@ font-weight: 700;
 line-height:  1.17;
 letter-spacing: 0.03em;
 text-transform: uppercase;
-margin-right: 76px;
 }
 .header-logo-black {
 color: #2E2F42;
 }
-.header-address {
-font-style: normal;        
-}
-.header-address-list {
-display: none;
-gap: 40px;
-}
-.header-address-item {    
-}
-.header-address-link {
-color: #434455;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 1.5;
-letter-spacing: 0.02em;
-transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.header-address-link:hover,  .header-address-link:focus {
-color:#404bbf;
-}  
-.header-menu-list {
-    display: none;
-    gap: 40px;
+.menu-open-btn {
+  background-color: transparent;
+  cursor: pointer;
 }
-.header-menu-item {
-    padding-top: 24px;
-    padding-bottom: 24px; 
-}
-
-.header-menu-link {
-    padding-top: 24px;
-    padding-bottom: 24px;
-    position: relative;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.current {
-    color:#404bbf;
-}
-.current::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    bottom: -1px;
-    height: 4px;
-    background-color: #404bbf;
-    border-radius: 2px;
-} 
-
-.header-menu-link:hover,  .header-menu-link:focus{
-    color:#404bbf;
-}
-.current:hover, .current:focus {
-    border-radius: 2px;
-    border-bottom: 2px solid #404BBF;
-    color:#404bbf;
+.menu-open-btn-icon {
+  width: 100%;
+  height: 100%;
+  fill: #2F2F37;
 }
 
 .mobil-menu {
@@ -160,16 +114,28 @@ color:#404bbf;
   left: 0;
   background-color: #FFF;
   padding: 24px 24px 40px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: scroll;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: auto;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .menu-close-btn {
   display: block;
   margin-left: auto;
-  background-color: #E7E9FC;
-  border: 1px solid #2E2F42;
+  background-color: rgba(231, 233, 252, 0.1);
+  border: 1px solid rgba(46, 47, 66, 0.1);
   border-radius: 50%;
   width: 24px;
   height: 24px;
-
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 .mobil-btn-icon {
   width: 8px;
@@ -177,7 +143,77 @@ color:#404bbf;
   fill: #2E2F42;
 }
 
+.menu-close-btn:hover, .menu-close-btn:focus {
+  background-color:#404bbf;
+  border: none;
+}
+.menu-close-btn:hover .mobil-btn-icon {
+  fill:#ffffff;
+}
+.menu-close-btn:focus .mobil-btn-icon {
+  fill:#ffffff;
+}
 
+.mobil-menu-item:not(:last-child) {
+  margin-bottom: 40px;
+}
+.mobil-menu-link {
+color: #2E2F42;
+font-size: 36px;
+font-weight: 700;
+line-height: 1.12;
+letter-spacing: 0.02em;
+text-transform: capitalize;
+}
+.mobil-current {
+  color:#404bbf;
+}
+
+.mobil-address-list {
+  margin-bottom: 48px;
+}
+
+.mobil-address-item:not(:last-child) {
+  margin-bottom: 24px;
+}
+.mobil-address-link {
+  color:#434455;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+.mobil-current-link {
+  color:#4D5AE5;
+}
+
+.mobil-soc-list {
+  display: flex;
+  gap: 40px;
+}
+
+.mobil-soc-item {
+  width: 40px;
+  height: 40px;
+}
+
+.mobil-soc-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4D5AE5;
+  border-radius: 50%;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.mobil-soc-icon {
+  width: 100%;
+  height: 100%;
+  fill: #f4f4fd;
+  padding: 8px;
+}
+.mobil-soc-link:hover, .mobil-soc-link:focus {
+  background-color: #31D0AA;
+}
 /** ================================= */
 
 /** =============HERO================ */
@@ -487,7 +523,7 @@ padding-bottom: 100px;
     background-color: #4D5AE5;
     border-radius: 50%;
     align-items: center;
-   justify-content: center;
+    justify-content: center;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
    }
 .footer-soc-icon {
@@ -780,6 +816,69 @@ color: #F4F4FD;
   .container {
     max-width: 768px;
 }
+.header-address {
+  font-style: normal;        
+  }
+  .header-address-list {
+  display: flex;
+  flex-direction: column;
+  column-gap: 12px;
+  }
+  .header-address-item {    
+  }
+  .header-address-link {
+  color: #434455;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .header-address-link:hover,  .header-address-link:focus {
+  color:#404bbf;
+  }  
+  .header-menu-list {
+      display: flex;
+      gap: 40px;
+  }
+  .header-menu-link {
+      padding-top: 24px;
+      padding-bottom: 24px;
+      position: relative;
+      transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .header-logo {
+   margin-right: 76px;
+}
+  .current {
+      color:#404bbf;
+  }
+  .current::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      bottom: -1px;
+      height: 4px;
+      background-color: #404bbf;
+      border-radius: 2px;
+  } 
+  
+  .header-menu-link:hover,  .header-menu-link:focus{
+      color:#404bbf;
+  }
+  .current:hover, .current:focus {
+      border-radius: 2px;
+      border-bottom: 2px solid #404BBF;
+      color:#404bbf;
+  }  
+  .menu-open-btn {
+    display: none;
+  }
+
 .hero {
   padding-top: 112px; 
   padding-bottom: 112px;
@@ -835,7 +934,19 @@ url(../images/people-office-tablet-2x.jpg);
     padding-left: 15px;
     padding-right: 15px;
 }
+.header-container {
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
 
+.header-address-list {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  }
+  .header-address-link {
+    font-size: 16px;
+    }
 .hero {
   padding-top: 188px; 
   padding-bottom: 188px;
