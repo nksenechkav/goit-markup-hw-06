@@ -808,6 +808,7 @@ color: #F4F4FD;
   }
   .modal-check-span {
     display: inline-flex;
+    flex-shrink: 0;
     background-color:#FCFCFC;
     border: 1px solid rgba(46, 47, 66, 0.40);
     border-radius: 2px;
@@ -942,12 +943,14 @@ url(../images/people-office-tablet-2x.jpg);
   .portfolio-item {
     width: calc((100% - 24px) / 2);
   }
+  
   .footer-container {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 72px 24px;
     align-items: baseline;
-    justify-content: center;
+    justify-content: baseline;
+    max-width: 584px;
 }
 
 .footer-logo {
@@ -955,9 +958,6 @@ url(../images/people-office-tablet-2x.jpg);
   }
 .footer-subtitle {
     text-align: left;
-}
-.footer-form-wrap {
-  justify-content: flex-start;
 }
 
 .footer-form {
@@ -982,6 +982,9 @@ url(../images/people-office-tablet-2x.jpg);
     max-width: 1158px;
     padding-left: 15px;
     padding-right: 15px;
+}
+.footer-container> .container {
+  max-width: 1158px;
 }
 .header-container {
   padding-top: 24px;
