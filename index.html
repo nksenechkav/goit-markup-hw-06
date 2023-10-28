@@ -30,13 +30,13 @@
             <li class="header-address-item"><a class="header-address-link" href="tel:+110001111111">+11 (000) 111-11-11</a></li>
         </ul>
         </address>
-        <button type="button" class="menu-open-btn"><svg class="menu-open-btn-icon" width="24" height="24">
+        <button type="button" class="menu-open-btn" data-modal-open><svg class="menu-open-btn-icon" width="24" height="24">
             <use href="./images/icons.svg#icon-menu-open-btn"></use>
           </svg></button>  
     </div>
-    <div class="mobil-menu">
+    <div class="mobil-menu is-open is-hidden" data-modal>
         <div>
-        <button type="button" class="menu-close-btn"><svg class="mobil-btn-icon" width="8" height="8">
+        <button type="button" class="menu-close-btn" data-modal-close><svg class="mobil-btn-icon" width="8" height="8">
             <use href="./images/icons.svg#icon-close-black-18dp"></use>
           </svg></button>  
         <ul class="mobil-menu-list">
@@ -168,7 +168,7 @@ for Your Business
         </div>
         </section>
         <section class="team">
-            <div class="container">
+            <div class="container team-container">
             <h2 class="team-title">Our Team</h2>
             <ul class="team-list">
                 <li class="team-item">

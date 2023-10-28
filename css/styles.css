@@ -256,7 +256,7 @@ font-size: 36px;
 font-weight: 700;
 line-height: 1.12;
 letter-spacing: 0.02em;
-max-width: 496px;
+max-width: 215px;
 margin: 0 auto;
 margin-bottom: 72px;
 }
@@ -328,8 +328,6 @@ letter-spacing: 0.02em;
 background-color:#F4F4FD;
 padding-top: 96px;
 padding-bottom: 96px;
-padding-left: 28px;
-padding-right: 28px;
 }
 .team-card {
     padding: 32px 16px;
@@ -838,7 +836,7 @@ color: #F4F4FD;
   .header-address-list {
   display: flex;
   flex-direction: column;
-  column-gap: 12px;
+  gap: 12px;
   }
   .header-address-item {    
   }
@@ -920,6 +918,7 @@ url(../images/people-office-tablet-2x.jpg);
   font-size: 56px;
   line-height: 1.07;
   margin-bottom: 36px;
+  max-width: 496px;
   }
 .features-item {
   width: calc((100% - 24px) / 2);
@@ -930,7 +929,9 @@ url(../images/people-office-tablet-2x.jpg);
 .features-subtitle {
   text-align: left;
   }
-
+.team-container {
+  max-width: 584px;
+}
 .team-list {
     gap: 64px 24px;
 }
